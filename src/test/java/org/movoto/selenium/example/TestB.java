@@ -15,8 +15,8 @@ import java.util.*;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 public class TestB {
-		
-	WebDriver driver;
+
+	private WebDriver driver;
 	
 	@BeforeClass
 	public void setUp() {
@@ -32,9 +32,10 @@ public class TestB {
                 "webdriver.chrome.driver",
                 "webdriver/chromedriver");
 		//System.setProperty("webdriver.chrome.driver","D:\\codebase\\SourceCode-Examples\\chromedriver_win32\\chromedriver.exe");
-		System.setProperty("webdriver.chrome.driver","/usr/local/share/chromedriver");
-		//driver = new ChromeDriver();
-		driver = new ChromeDriver(capabilities);
+//		System.setProperty("webdriver.chrome.driver","/usr/local/share/chromedriver");
+		System.setProperty("webdriver.chrome.driver","F:\\Java\\AutomatedTesting-Selenium-UI-999\\webdriver\\chromedriver.exe");
+		driver = new ChromeDriver();
+//		driver = new ChromeDriver(capabilities);
 		//driver.manage().window().maximize();
 		
 		
@@ -49,15 +50,13 @@ public class TestB {
 	
 	@Test
 	public void testGooglePageTitleInChrome() {
-		/*
 		driver.navigate().to("http://www.google.com");
 		String strPageTitle = driver.getTitle();
 		Assert.assertTrue(strPageTitle.equalsIgnoreCase("Google"), "Page title doesn't match");
-		*/
-		driver.navigate().to("http://172.18.51.87:81/devcapsule-spring-1.0/");
+/*		driver.navigate().to("http://172.18.51.87:81/devcapsule-spring-1.0/");
 		//driver.get("http://172.18.51.88:8080/devcapsule-spring-1.0/");
 		String strPageTitle = driver.getTitle();
-		Assert.assertTrue(strPageTitle.equalsIgnoreCase("Pizzas"), "Page title doesn't match");
+		Assert.assertTrue(strPageTitle.equalsIgnoreCase("Pizzas"), "Page title doesn't match");*/
 	}
 	
 	
