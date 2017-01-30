@@ -1,4 +1,4 @@
-package org.movoto.selenium.example;
+package com.simpals.selenium.example;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -6,15 +6,12 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.DesiredCapabilities; 
-import java.net.*;
-import java.io.*;
-import org.openqa.selenium.remote.RemoteWebDriver; 
-import org.openqa.selenium.remote.RemoteWebElement; 
+import org.openqa.selenium.remote.DesiredCapabilities;
+
 import java.util.*;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class TestB {
+public class ExampleTest {
 
 	private WebDriver driver;
 	
@@ -45,9 +42,8 @@ public class TestB {
         driver = new RemoteWebDriver(new URL("http://172.18.51.88:4444/wd/hub"), capability);
 		}catch(Exception e){}
              */
-		
+
 	}
-	
 	@Test
 	public void testGooglePageTitleInChrome() {
 		driver.navigate().to("http://www.google.com");
@@ -58,16 +54,9 @@ public class TestB {
 		String strPageTitle = driver.getTitle();
 		Assert.assertTrue(strPageTitle.equalsIgnoreCase("Pizzas"), "Page title doesn't match");*/
 	}
-	
-	
+
 	
 	
 
-	@AfterClass
-	public void tearDown() {
-		if(driver!=null) {
-			System.out.println("Closing chrome browser");
-			driver.quit();
-		}
-	}
+
 }

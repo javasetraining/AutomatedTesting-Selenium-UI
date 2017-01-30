@@ -7,7 +7,7 @@
         <class name="com.test.TestA"/>
         </classes> -->
         <packages>
-        <package name="org.movoto.selenium.example"/>
+        <package name="com.simpals.selenium.example"/>
         </packages>
     </test>
     
