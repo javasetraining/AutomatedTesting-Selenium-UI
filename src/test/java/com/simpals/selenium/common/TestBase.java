@@ -1,6 +1,5 @@
 package com.simpals.selenium.common;
 
-import org.junit.Before;
 import org.junit.Rule;
 import org.junit.rules.TestRule;
 import org.junit.rules.TestWatcher;
@@ -39,7 +38,7 @@ public class TestBase {
         System.setProperty("webdriver.chrome.driver","F:\\Java\\AutomatedTesting-Selenium-UI-999\\webdriver\\chromedriver.exe");
         driver = new ChromeDriver();
 //		driver = new ChromeDriver(capabilities);
-        //driver.manage().window().maximize();
+        driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
     }
 
@@ -58,7 +57,7 @@ public class TestBase {
         }
     }
 
-    public void goToAccountMainPage() {
+    private void goToAccountMainPage() {
         try {
             try {
                 driver.navigate().to(Config.getMyAccountUrl());
@@ -78,6 +77,12 @@ public class TestBase {
             driver.findElement(By.id("t-user-logout")).click();
         }
     }
+
+/*    public void loginIn(String email, String password) {
+        emailField.sendKeys(email);
+        passwordField.sendKeys(password);
+        submitButton.click();
+    }*/
 
 
     @Rule

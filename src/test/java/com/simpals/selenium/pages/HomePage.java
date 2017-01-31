@@ -3,18 +3,26 @@ package com.simpals.selenium.pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-/**
- * Created by MaRV on 1/29/2017.
- */
+
 public class HomePage {
 
-    @FindBy(xpath = ".//*[@id='header']/div[3]/div/h1/a")
-    public WebElement logo;
+    //NOT RELEVANT!!!---!!!SELENIUM RC OR 1.0V
 
-    @FindBy(xpath = ".//*[@id='m__user_panel']/ul/li[2]/a")
-    public WebElement popupLoginForm;
+    @FindBy(xpath = "html/body/div[1]/div/div[1]/form/div[1]/input")
+    private WebElement loginNameField;
 
-/*    @Override
-    public void tryToOpen() {
-        logo.click();*/
+    @FindBy(xpath = "html/body/div[1]/div/div[1]/form/div[2]/input")
+    private WebElement passwordField;
+
+    @FindBy(xpath = "html/body/div[1]/div/div[1]/form/footer/button[1]")
+    private WebElement submitButton;
+
+    //NOT RELEVANT!!!---!!!SELENIUM RC OR 1.0V
+
+
+    public void loginIn(String loginName, String password) {
+        loginNameField.sendKeys(loginName);
+        passwordField.sendKeys(password);
+        submitButton.click();
     }
+}
